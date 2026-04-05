@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Security Analyzer</h1>
+            <p>Analyze your password strength using advanced entropy calculations. All processing is done locally for your privacy.</p>
+        </header>
+        <main>
+            <div class="analyzer">
+                <div class="input-group">
+                    <label for="password-input">Enter Password:</label>
+                    <div class="password-input-container">
+                        <input type="password" id="password-input" placeholder="Type your password here..." aria-describedby="password-feedback">
+                        <button id="toggle-visibility" aria-label="Toggle password visibility">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="strength-meter">
+                    <div class="meter-bar" id="strength-bar"></div>
+                    <div class="strength-label" id="strength-label">Very Weak</div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <h3>Entropy Bits</h3>
+                        <span id="entropy-bits">0</span>
+                    </div>
+                    <div class="stat">
+                        <h3>Time to Crack</h3>
+                        <span id="time-to-crack">Instant</span>
+                    </div>
+                </div>
+                <div class="feedback">
+                    <h3>Feedback</h3>
+                    <ul id="feedback-list" aria-live="polite"></ul>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Privacy-First: No data is sent to any server. All analysis happens in your browser.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
